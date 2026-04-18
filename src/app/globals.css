@@ -1,0 +1,60 @@
+@import "tailwindcss";
+
+/* ========== TEMA CLARO (por defecto) ========== */
+:root {
+  /* Fondos */
+  --background: #F9F9FB;
+  --background-secondary: #FFFFFF;
+  
+  /* Textos */
+  --foreground: #1E1E2F;
+  --muted: #5A5A6E;
+  
+  /* Bordes */
+  --border: #E2E2EA;
+  
+  /* Verde principal */
+  --primary: #2E7D32;      /* Verde bosque */
+  --primary-hover: #1B5E20; /* Más oscuro para hover */
+  
+  /* Verde para mensajes de éxito */
+  --success: #4CAF50;
+}
+
+/* ========== TEMA OSCURO ========== */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #121212;
+    --background-secondary: #1E1E2E;
+    
+    --foreground: #EDEDF0;
+    --muted: #A0A0B0;
+    
+    --border: #2C2C3A;
+    
+    --primary: #66BB6A;      /* Verde menta */
+    --primary-hover: #81C784; /* Más claro para hover */
+    
+    --success: #4CAF50;      /* Mismo verde que en claro */
+  }
+}
+
+/* ========== MAPEO A TAILWIND ========== */
+@theme inline {
+  --color-background: var(--background);
+  --color-background-secondary: var(--background-secondary);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-border: var(--border);
+  
+  --color-primary: var(--primary);
+  --color-primary-hover: var(--primary-hover);
+  --color-success: var(--success);
+}
+
+/* ========== ESTILOS BASE ========== */
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans, Arial, Helvetica, sans-serif);
+}
